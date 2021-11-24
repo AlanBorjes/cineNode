@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `cine`
 --
+CREATE DATABASE cine;
+USE cine;
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,10 @@ ALTER TABLE `pelicula`
 ALTER TABLE `pelicula`
   ADD CONSTRAINT `pelicula_ibfk_1` FOREIGN KEY (`Categoria`) REFERENCES `categoria` (`id`);
 COMMIT;
+INSERT INTO `pelicula` (`id`, `titulo`, `Descripcion`, `Sinopsis`, `Rating`, `dateCreacion`, `dateUpdate`, `status`, `Categoria`) VALUES
+(1, 'Noche de terror', 'Buena peli', 'buela peli', 10, '2021-11-24 09:42:52', '2021-11-24 09:48:13', 0, 3),
+(2, 'Viernes 13', 'Buena peli', 'buela peli', 5, '2021-11-24 09:46:26', '2021-11-24 09:46:26', 1, 2);
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
